@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93EC7314-3CAE-40EA-9A0A-31125D441016}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfApp8</RootNamespace>
+    <AssemblyName>WpfApp8</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>service_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ADD.xaml.cs">
+      <DependentUpon>ADD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\ADD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Product.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMAGE\0070C563.jpg" />
+    <Resource Include="IMAGE\022096CB.jpg" />
+    <Resource Include="IMAGE\03D096CB.jpg" />
+    <Resource Include="IMAGE\0D30C4EE.jpg" />
+    <Resource Include="IMAGE\0D60A8A4.jpg" />
+    <Resource Include="IMAGE\0DF0A8A4.jpg" />
+    <Resource Include="IMAGE\21B0E533.jpg" />
+    <Resource Include="IMAGE\23106A35.jpg" />
+    <Resource Include="IMAGE\2390848B.jpg" />
+    <Resource Include="IMAGE\23F0848B.jpg" />
+    <Resource Include="IMAGE\27B0C883.jpg" />
+    <Resource Include="IMAGE\2A109062.jpg" />
+    <Resource Include="IMAGE\2B009062.jpg" />
+    <Resource Include="IMAGE\2B609062.jpg" />
+    <Resource Include="IMAGE\2D709062.jpg" />
+    <Resource Include="IMAGE\2E00E06C.jpg" />
+    <Resource Include="IMAGE\2E30E06C.jpg" />
+    <Resource Include="IMAGE\2E60E06C.jpg" />
+    <Resource Include="IMAGE\30E0C751.jpg" />
+    <Resource Include="IMAGE\3760D73F.jpg" />
+    <Resource Include="IMAGE\3970E753.jpg" />
+    <Resource Include="IMAGE\39A0C188.jpg" />
+    <Resource Include="IMAGE\39D0C188.jpg" />
+    <Resource Include="IMAGE\3B70C57C.jpg" />
+    <Resource Include="IMAGE\3DA0B713.jpg" />
+    <Resource Include="IMAGE\3DF0E4BC.jpg" />
+    <Resource Include="IMAGE\40409946.jpg" />
+    <Resource Include="IMAGE\43909176.jpg" />
+    <Resource Include="IMAGE\43C09176.jpg" />
+    <Resource Include="IMAGE\43E08C52.jpg" />
+    <Resource Include="IMAGE\45008C52.jpg" />
+    <Resource Include="IMAGE\45908C52.jpg" />
+    <Resource Include="IMAGE\47E07CB5.jpg" />
+    <Resource Include="IMAGE\5180B90E.jpg" />
+    <Resource Include="IMAGE\5250C855.jpg" />
+    <Resource Include="IMAGE\54B0795D.jpg" />
+    <Resource Include="IMAGE\59B0BE73.jpg" />
+    <Resource Include="IMAGE\5A30A7EE.jpg" />
+    <Resource Include="IMAGE\5BB0C351.jpg" />
+    <Resource Include="IMAGE\5BE0C351.jpg" />
+    <Resource Include="IMAGE\6080DCD5.jpg" />
+    <Resource Include="IMAGE\63C09E91.jpg" />
+    <Resource Include="IMAGE\6730A31C.jpg" />
+    <Resource Include="IMAGE\6800BB8A.jpg" />
+    <Resource Include="IMAGE\69C0CD62.jpg" />
+    <Resource Include="IMAGE\6CA0BE73.jpg" />
+    <Resource Include="IMAGE\6CE0A012.jpg" />
+    <Resource Include="IMAGE\6DA0A012.jpg" />
+    <Resource Include="IMAGE\6DD0A012.jpg" />
+    <Resource Include="IMAGE\7B70B9C6.jpg" />
+    <Resource Include="IMAGE\8430842A.jpg" />
+    <Resource Include="IMAGE\85C04040.jpg" />
+    <Resource Include="IMAGE\8BC0C1A9.jpg" />
+    <Resource Include="IMAGE\8E20A863.jpg" />
+    <Resource Include="IMAGE\8F609ED7.jpg" />
+    <Resource Include="IMAGE\8F909ED7.jpg" />
+    <Resource Include="IMAGE\8FE07916.jpg" />
+    <Resource Include="IMAGE\90505D31.jpg" />
+    <Resource Include="IMAGE\90A0B807.jpg" />
+    <Resource Include="IMAGE\90D0B807.jpg" />
+    <Resource Include="IMAGE\9290C1E7.jpg" />
+    <Resource Include="IMAGE\92C0C1E7.jpg" />
+    <Resource Include="IMAGE\9380C1E7.jpg" />
+    <Resource Include="IMAGE\96E0C1E7.jpg" />
+    <Resource Include="IMAGE\9750DA76.jpg" />
+    <Resource Include="IMAGE\97809225.jpg" />
+    <Resource Include="IMAGE\9B3075EB.jpg" />
+    <Resource Include="IMAGE\AD00B713.jpg" />
+    <Resource Include="IMAGE\B0A0C186.jpg" />
+    <Resource Include="IMAGE\B0F0CB59.jpg" />
+    <Resource Include="IMAGE\B590AA7B.jpg" />
+    <Resource Include="IMAGE\B790A6AA.jpg" />
+    <Resource Include="IMAGE\BA30C186.jpg" />
+    <Resource Include="IMAGE\BD80E8D5.jpg" />
+    <Resource Include="IMAGE\C310B9F3.jpg" />
+    <Resource Include="IMAGE\C9C0F036.jpg" />
+    <Resource Include="IMAGE\CC10C869.jpg" />
+    <Resource Include="IMAGE\CC40C869.jpg" />
+    <Resource Include="IMAGE\D0D08F32.jpg" />
+    <Resource Include="IMAGE\D2508F32.jpg" />
+    <Resource Include="IMAGE\D4D0CE67.jpg" />
+    <Resource Include="IMAGE\D9605006.jpg" />
+    <Resource Include="IMAGE\DC70BEC3.jpg" />
+    <Resource Include="IMAGE\E0A0E079.jpg" />
+    <Resource Include="IMAGE\E0D0E079.jpg" />
+    <Resource Include="IMAGE\E320BB7C.jpg" />
+    <Resource Include="IMAGE\E3A0B18A.jpg" />
+    <Resource Include="IMAGE\E5507A37.jpg" />
+    <Resource Include="IMAGE\E9308929.jpg" />
+    <Resource Include="IMAGE\EF80D790.jpg" />
+    <Resource Include="IMAGE\EFC05011.jpg" />
+    <Resource Include="IMAGE\F160E078.jpg" />
+    <Resource Include="IMAGE\F200BC2F.jpg" />
+    <Resource Include="IMAGE\F2B0E078.jpg" />
+    <Resource Include="IMAGE\F2E0E078.jpg" />
+    <Resource Include="IMAGE\F310E078.jpg" />
+    <Resource Include="IMAGE\F460E078.jpg" />
+    <Resource Include="IMAGE\F490E078.jpg" />
+    <Resource Include="IMAGE\F8E0B138.jpg" />
+    <Resource Include="IMAGE\FA90B138.jpg" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="service_logo.png" />
+    <Resource Include="service_logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
